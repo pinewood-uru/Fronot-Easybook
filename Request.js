@@ -79,6 +79,18 @@ export class Request {
 
   }
 
+  // GET CLIENTE BY HORA
+
+  static getClienteByHora(opciones = {}) {
+
+    const queryParams = new URLSearchParams({});
+
+    return fetch(obtenerUrl("clientes" + queryParams), { headers })
+      .then(procesarRespuesta)
+      .catch(manejarErrores)
+
+  }
+
   static getClienteById(id) {
     return fetch(obtenerUrl(`cliente/${id}`), { headers })
       .then(procesarRespuesta)
