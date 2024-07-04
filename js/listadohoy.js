@@ -10,6 +10,7 @@ const mostrarlistaClienteshoy = (data) => {
     <th scope="col">Nombre</th>
     <th scope="col">Apellido</th>
     <th scope="col">Peronsas</th>
+    <th scope="col">Fecha</th>
     <th scope="col">Horario</th>
     </tr>`;
 
@@ -22,6 +23,7 @@ const mostrarlistaClienteshoy = (data) => {
             cliente.personas,
             cliente.mail,
             cliente.celular,
+            cliente.date
         ).mostrarclienteshoy());
     
     imprimir("listadohoy",`<table class="container-fluid table table-bordered border-primary w-100 justify-content-start"><thead>${headerlista}</thead><tbody>${listadoCliente}<tbody></table>`)

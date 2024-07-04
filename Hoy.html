@@ -45,32 +45,15 @@
 
         <section class=" container-fluid d-flex flex-column align-items-start">
             <!-- TABLA -->
-            <h1 class="w-75 text-primary py-3">Hoy:</h1>
+            <h1 class="w-75 text-primary py-3">Reservas:</h1>
 
-            <table class="container-fluid table table-bordered border-primary w-100 justify-content-start">
 
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th>
-                        <th scope="col">Personas</th>
-                        <th scope="col">Hora</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Avella</td>
-                        <td>5</td>
-                        <td>Date</td>
-                    </tr>
-
-                </tbody>
-            </table>
+            <div id="listadohoy" class="container-fluid d-flex flex-column align-items-start"></div>
+            
+            <div id="lista-error"></div>
         </section>
     </main>
+    <script src="js/listadohoy.js" type="module"></script>
 </body>
 
 </html>

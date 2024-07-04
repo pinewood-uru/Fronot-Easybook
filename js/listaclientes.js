@@ -11,6 +11,7 @@ const mostrarlistaClientes = (data) => {
     <th scope="col">Apellido</th>
     <th scope="col">Peronsas</th>
     <th scope="col">Horario</th>
+    <th scope="col">Fecha</th>
     <th scope="col"> Eliminar</th>
     <th scope="col"> Modificar</th>
     </tr>`;
@@ -24,6 +25,7 @@ const mostrarlistaClientes = (data) => {
             cliente.personas,
             cliente.mail,
             cliente.celular,
+            cliente.date
         ).mostrarclientes());
     
     imprimir("listado",`<table class="container-fluid table table-bordered border-primary w-100 justify-content-start"><thead>${headerlista}</thead><tbody>${listadoCliente}<tbody></table>`)

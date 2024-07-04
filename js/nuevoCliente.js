@@ -16,14 +16,15 @@ console.log(idCliente)
 if (idCliente != undefined) {
     Request.getClienteById(idCliente)
     .then((data) => {
-        const { nombre, apellido, mail, telefono, horario, personas } = data;
+        const { nombre, apellido, mail, celular, horario, personas, date } = data;
         console.log(data)
         document.querySelector("#nombre").value = nombre;
         document.querySelector("#apellido").value = apellido;
         document.querySelector("#email").value = mail;
-        document.querySelector("#telefono").value = telefono;
+        document.querySelector("#celular").value = celular;
         document.querySelector("#horario").value = horario;
         document.querySelector("#personas").value = personas;
+        document.querySelector("#date").value = date;
     })
     .catch((error) => {
         imprimir("nuevo-cliente-error", error);
@@ -33,18 +34,19 @@ if (idCliente != undefined) {
  document.querySelector("#btn-nuevocliente").addEventListener("click", () => {
      const nombre = obtenerValorInput("nombre");
      const apellido = obtenerValorInput("apellido");
-     const email = obtenerValorInput("email");
-     const telefono = obtenerValorInput("telefono");
+     const mail = obtenerValorInput("email");
+     const celular = obtenerValorInput("celular");
      const horario = obtenerValorInput("horario");
      const personas = obtenerValorInput("personas");
+     const date = obtenerValorInput("date");
 
-     if (!nombre || !apellido || !email || !telefono || !horario || !personas) {
+     if (!nombre || !apellido || !mail || !celular || !horario || !personas || !date) {
         
         imprimir("Nuevo-cliente-error", "Por favor complete todos los campos");
         return;
       }
 
-      const body = JSON.stringify({ nombre, apellido, email, telefono, horario, personas });
+      const body = JSON.stringify({ nombre, apellido, mail, celular, horario, personas, date });
       idCliente != undefined ? Request.modificarCliente(idCliente, body) : Request.postCliente(body)
       .then(() => {
           document.location.replace("Reservas.html");
