@@ -62,7 +62,7 @@ export class Request {
   // REGISTER
 
   static register(body) {
-    return fetch(obtenerUrl("registrar"), { method: "POST", body, headers })
+    return fetch(obtenerUrl("nuevoadmin"), { method: "POST", body, headers })
       .then(procesarRespuesta)
       .catch(manejarErrores);
   }
